@@ -50,6 +50,23 @@ img {
   text-decoration: none;
 }
 /* Header */
+
+.current {
+  color: #404BBF;
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0px;
+  bottom: -27px;
+  background: var(--btn-color-hov-foc);
+  border-radius: 2px;
+}
+
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
