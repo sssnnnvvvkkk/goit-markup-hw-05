@@ -166,7 +166,7 @@ img {
   border-radius: 4px;
   padding: 16px 32px;
   border: 0;
-  transition: color 250ms;
+  transition: background 250ms;
 }
 
 .main-btn:hover,
@@ -313,13 +313,12 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  
+  transition: background-color 250ms;
 }
 
 .team-soc-item {
   width: 40px;
   height: 40px;
-  transition: color 250ms;
 }
 
 .team-soc-item :is(:hover,:focus) {
@@ -360,12 +359,12 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  transition: color 250ms;
+  transition: border-color 250ms;
 }
 
 .customers-icon{
   fill: #8e8f99;
-  transition: color 250ms;
+  transition: fill 250ms;
 }
 .customers-link:is(:hover, :focus) {
   border-color: #404BBF;
@@ -419,7 +418,6 @@ img {
 .socf-item {
   width: 40px;
   height: 40px;
-  transition: color 250ms linear;
 }
 .socf-link {  
   width: 100%;
@@ -429,7 +427,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  
+  transition: background-color 250ms linear;
 }
 
 .socf-item :is(:hover,:focus) {
@@ -464,6 +462,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-background);
+  transition: color 250ms linear;
 }
 
 .portfolio-link:hover,
@@ -476,12 +475,14 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  transition: color 250ms linear;
 }
 .portfolio-tel {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  transition: color 250ms linear;
 }
 
 
@@ -519,6 +520,7 @@ img {
   border: var(--border-color);
   border-radius: 4px;
   padding: 12px 24px;
+  transition: background  250ms linear, border-color  250ms linear ;
 }
 
 .btn-portfolio:hover,
@@ -531,8 +533,18 @@ img {
 
 /* section image*/
 
-.itm-portfolio {
+.item-portfolio {
   flex-basis: calc((100% - 48px) /3);
+  position: relative;
+}
+
+.portf-top-text {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--4light-color);
+  background-color: var(--hover-focus-color);
 }
 
 .content-img-p {
@@ -541,6 +553,7 @@ img {
   padding-left: 16px;
   padding-bottom: 32px;
   padding-top: 32px;
+  transition: box-shadow 250ms linear;
 }
 
 .content-img-p:is(:hover,:focus) {
