@@ -100,7 +100,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-background);
-  transition: color 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
@@ -120,7 +120,7 @@ img {
 .contacts-header:hover,
 .contacts-header:focus {
   color: var(--hover-focus-color);
-  transition: color 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-mail {
   font-size: 16px;
@@ -166,7 +166,7 @@ img {
   border-radius: 4px;
   padding: 16px 32px;
   border: 0;
-  transition: background 250ms;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-btn:hover,
@@ -313,7 +313,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: background-color 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-item {
@@ -359,7 +359,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  transition: border-color 250ms;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon{
@@ -427,7 +427,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: background-color 250ms linear;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socf-item :is(:hover,:focus) {
@@ -462,7 +462,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-background);
-  transition: color 250ms linear;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
@@ -475,14 +475,14 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
-  transition: color 250ms linear;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-tel {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
-  transition: color 250ms linear;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -520,7 +520,7 @@ img {
   border: var(--border-color);
   border-radius: 4px;
   padding: 12px 24px;
-  transition: background  250ms linear, border-color  250ms linear ;
+  transition: background  250ms cubic-bezier(0.4, 0, 0.2, 1), border-color  250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
 .btn-portfolio:hover,
@@ -535,16 +535,30 @@ img {
 
 .item-portfolio {
   flex-basis: calc((100% - 48px) /3);
+}
+
+.item-portfolio:is(:hover, :focus) .portf-top-text {
+  transform: translateY(0%);
+}
+
+.portf-top-wrap {
   position: relative;
+  overflow: hidden;
 }
 
 .portf-top-text {
   position: absolute;
   top: 0;
+  font-family: "roboto", sans-serif;
+  font-style: 400;
   font-size: 16px;
   line-height: 1.5;
   color: var(--4light-color);
   background-color: var(--hover-focus-color);
+  padding: 40px 32px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-img-p {
@@ -553,7 +567,7 @@ img {
   padding-left: 16px;
   padding-bottom: 32px;
   padding-top: 32px;
-  transition: box-shadow 250ms linear;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-img-p:is(:hover,:focus) {
@@ -586,6 +600,9 @@ img {
   color: var(--text-color)
   
 }
+
+
+
 /* footet portfolio */
 
 .footer {
@@ -631,4 +648,44 @@ img {
   bottom: -27px;
   background: var(--btn-color-hov-foc);
   border-radius: 2px;
+}
+
+/*----modal---*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  min-height: 576px;
+  background-color: #FCFCFC;
+  border-radius: 4px;
+  padding: 24px;
+}
+.modal-close {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: #E7E9FC;
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
